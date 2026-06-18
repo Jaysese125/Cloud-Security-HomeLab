@@ -1,0 +1,12 @@
+[nginx-404]
+enabled = true
+port    = http,https
+filter  = nginx-404
+logpath = /var/log/nginx/access.log
+backend = auto
+
+# BAN RULES:
+maxretry = 5
+findtime = 10
+bantime  = 600
+action   = ufw[action=deny]
